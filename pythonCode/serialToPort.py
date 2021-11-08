@@ -1,8 +1,8 @@
 import serial
+import time
 
-
-# crearea clasei se face prin sendInfo(numele portulu ex:COM4, baudRate ex pt Arduino: 9600, timout timer ex 0.1)
-# apelare activate
+# crearea clasei -> se face prin sendInfo(numele portulu ex:COM4, baudRate ex pt Arduino: 9600, timout timer ex 0.1)
+# apelare activate -> scrie ce vrei sa trimiti catre clasa 
 class sendInfo():
     def __init__(self,portCode,baudRate,beforeTimeout):
         self.portCode = portCode
@@ -16,10 +16,10 @@ class sendInfo():
         return data
     def activate(self,x):
         while True:
-            value = self.writeData(self.writeData(x))
+            value = self.writeData(x)
             print(value)
 
 if __name__ == "__main__":
-    a = sendInfo('COM4',9600,0.1)    
-    a.activate("string")
+    a = sendInfo('COM1',9600,0.1)    
+    a.activate("0xff")
 
