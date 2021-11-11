@@ -1,15 +1,19 @@
-import serialToPort
-from openCVbackend import openCV
+from pythonCode.serialToPort import sendInfo
+from pythonCode.openCVbackend import openCV
 
 import tkinter as tk
 
 
 class loopToSend():
     def __init__(self):
-        
+        self.a = openCV()
+
+
         #region tkinter
         root = tk.Tk()
         root.title("Camera tracker")
+
+
 
         textWidth = 15
         #port defining
@@ -33,7 +37,7 @@ class loopToSend():
         self.timeOut.grid(row = 0, column = 2, padx= 10)
         self.timeOut.insert(0, 0.1)
 
-        cautarePersoana = tk.Button(root, text = "Start", padx = 10, pady = 5, fg = "white", bg = "gray",command = lambda : openCV.mockMethod() )  #mockMethodneedstochange
+        cautarePersoana = tk.Button(root, text = "Start", padx = 10, pady = 5, fg = "white", bg = "gray",command = lambda : self.a.startCamera() )  #mockMethodneedstochange
         cautarePersoana.grid(row = 2, column = 1)
         
         #print(f"%s %s %s"%(portID.get(),baudRate.get(),timeOut.get()))
@@ -42,7 +46,7 @@ class loopToSend():
         ###
     
     def camToArduino(cameraDirection):
-        sendData = serialToPort.sendInfo()
+        sendData = sendInfo()
         
 
         
