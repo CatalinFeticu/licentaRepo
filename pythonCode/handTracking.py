@@ -39,32 +39,6 @@ class handTracking():
                     cv2.circle(img, (cx, cy), 5, (0, 0, 255), cv2.FILLED)
         return lmList
 
-# def main():
-#     pTime = 0
-#     cTime = 0
-#     cap = cv2.VideoCapture(0)
-#     tracking = handTracking()
-#     while True:
-#         success, img = cap.read()
-#         img = tracking.handDetect(img)
-#         lmList = tracking.handPos(img)
-#         if len(lmList) != 0:
-#             print(lmList[0])
-#
-#         cTime = time.time()
-#         fps = 1/(cTime - pTime)
-#         pTime = cTime
-#
-#         cv2.putText(img,str(int(fps)),(10,70), cv2.FONT_HERSHEY_PLAIN,3,(0,255,0),3)
-#
-#         cv2.imshow("Image",img)
-#         cv2.waitKey(1)
-
-
-
-
-
-
 if __name__ == "__main__":
 
     main()

@@ -8,12 +8,9 @@ class loopToSend():
     def __init__(self):
         self.a = openCV()
 
-
         #region tkinter
         root = tk.Tk()
         root.title("Camera tracker")
-
-
 
         textWidth = 15
         #port defining
