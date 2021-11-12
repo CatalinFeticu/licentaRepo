@@ -18,20 +18,23 @@ class sendInfo():
         return data
 
     def activate(self,x):
-        while True:
-            value = self.writeData(x)
-            print(value)
-    
+        value = self.writeData(x)
+
+
     def transformForWriting(self, direction):
         result = {
-            "left": "placeholder",
-            "right": "placeholder",
-            "up" : "placeholder",
-            "down" : "placeholder"
+            "left": "leftPlaceholder",
+            "right": "rightPlaceholder",
+            "up" : "upPlaceholder",
+            "down" : "downPlaceholder",
+            "upright": "uprightPlaceholder",
+            "upleft": "upleftPlaceholder",
+            "downright":"downrightPlaceholder",
+            "downleft":"downleftPlaceholder"
         }.get(direction)
         return result
 
 if __name__ == "__main__":
-    a = sendInfo('COM1',9600,0.1)    
+    a = sendInfo('COM1',9600,0.1)
     a.activate("0xff")
-    print(a.transformForWriting("right"))
+    print(a.transformForWriting("upright"))
